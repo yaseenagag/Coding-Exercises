@@ -10,8 +10,8 @@
    <label for="guess">Your Guess:</label>
    <input type="text" id="guess" value="" placeholder="0 - 100" />
    <input type="button" onclick="yourGuess()" value="submit" /><br />
-   <input type="button" onclick="" value="Show My Guesses" />
-   <input type="button" onclick="" value="New Game" /><br />
+   <input type="button" id="showguesses" onclick="showGuesses()" value="Show My Guesses" />
+   <input type="button" onclick="generateNumberToGuess(true)" value="New Game" /><br />
    <input id="cheat" type="checkbox" value="cheat" onclick="showNumberToGuess()" />
    <label for="cheat">Cheat</label>
    <div id="cheatShow" style="display: none;">
@@ -19,7 +19,7 @@
     <label for="numberToGuess">Number to guess</label>
    </div>
   </fieldset>
-  <fieldset>
+  <fieldset id="guesses" class="guesses">
    <legend> Output </legend>
    <textarea id="output" name="output" rows="5" style="width: 100%;"></textarea>
   </fieldset>
