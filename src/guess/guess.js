@@ -2,9 +2,11 @@ function yourGuess() {
     guess = document.getElementById("guess").value;
     guesses = document.getElementById("output");
 
-    if ( typeof guess !== 'number' ) {
+    if ( isNaN(guess) ) {
       alert("Please select a number!!!")
     }
+
+    document.getElementById('guess').value = ''
 
     if (guess == numToGuess) {
         guesses.value = guesses.value + "\r" + "You have guessed correctly! ("+guess+")";
