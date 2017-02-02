@@ -17,6 +17,12 @@ Even though Benchmark Goals are solo goals, the project formation algorithm will
 
 For the project review, make sure to schedule a 1:1 30 minute meeting the following week with a SEP. They will go over the code with you in real time, and give you an in person completeness/quality review. 
 
+## Testing
+
+Come up with your own inputs and outputs (using the example inputs and outputs as well) and try to test with as many (reasonable) edge cases as you can.
+
+Write your tests using the `assert` module in Node or whatever testing library you feel most comfortable with.
+
 ## Specifications
 
 
@@ -49,6 +55,10 @@ AERETOXMYCNS_B
 ```
 
 **Output:**
+
+The number of tiles remaining followed by a comma separated list of the tiles themselves.
+
+For example: 
 
 ```
 10: E
@@ -90,21 +100,39 @@ For example:
 
 `10101 = 16 + 4 + 1 = 21`
 
-So `10101` is binary for `19`.
+So `10101` is binary for `21`.
 
 The [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_number) has a similar property: any positive integer can be written in the form of Fibonacci numbers.
 
 For example:
 
-| 13| 8 | 5 | 3 | 2 | 1 | 1 |
-|---|---|---|---|---|---|---|
-| 1 | 1 | 0 | 0 | 0 | 0 | 0 |
+| 21| 13| 8 | 5 | 3 | 2 | 1 | 1 |
+|---|---|---|---|---|---|---|---|
+| 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
 
 `1100000 = 13 + 8 = 21`
 
 So `1100000` is base Fibonacci for `21`
 
-Write a program that converts from decimal to base Fibonacci and from Fibonacci to decimal.
+Write a program that converts from **decimal to base Fibonacc**i and from **Fibonacci to decimal**.
+
+**Example Inputs** (the `decimal` and `fib` labels describe the state the number is currently in):
+
+`decimal 16`
+`decimal 31`
+`fib 10`
+`fib 1`
+`fib 11111`
+
+**Example Outputs:**
+
+`1001000`
+`10100100`
+`1`
+`1`
+`12`
+
+**NOTE:** there can be more than one possible representation of a decimal integer in base Fibonacci (as seen in the 3rd and 4th cases above).
 
 ---
 
@@ -119,6 +147,14 @@ A string that contains several words to disemvowel. It will consist of all lower
 **Output:**
 
 The disemvowled text with spaces removed.
+
+**Example Input:**
+
+`i am groot`
+
+**Example Output:**
+
+`mgrt`
 
 ---
 
@@ -153,7 +189,7 @@ If you wish to find the name of the first play in the list of Shakespeare's work
 
 You would say that the value located at this path is "Romeo and Juliet". The value "tumblr" is located at:
 
-`favoriteSites -> 2`
+`favoriteSites -> 0`
 
 Your task is to find a user-provided key hidden in a JSON object.
 
