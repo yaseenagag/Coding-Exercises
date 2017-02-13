@@ -1,6 +1,6 @@
 function fibonacci(input) {
   let current = 0,
-    pervious = 1,
+    previous = 1,
     fibonacci = 1,
     result = []
 
@@ -11,7 +11,7 @@ function fibonacci(input) {
         result.push(previous)
 
     }
-    return fibonacci;
+    return result;
 };
 
 console.log(fibonacci(6))

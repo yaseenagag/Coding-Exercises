@@ -1,4 +1,3 @@
-_ = require('./underscore');
 
 Scrabble = {
   score : function(word) {

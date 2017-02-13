@@ -5,7 +5,6 @@ const formatDate = ( string ) => {
     split,
     year
 
-
     if ( string.includes('-') ) {
       return filterString(string)
     }
@@ -59,5 +58,12 @@ const filterString = ( input ) => {
 const splitString = ( date ) => {
   return date.split('-')
 }
+//
+// function formatDatesInFile() {
+//   const fileSystem = require('fs')
+//
+//   const inputFile = require('readline').createInterface({
+//     input: fileSystem.createReadStream('./src/dates.txt')
+//   })
 
-console.log(formatDate('Mar 21, 1980'))
+console.log(formatDate('yaseen'))
