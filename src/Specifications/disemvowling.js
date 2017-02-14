@@ -1,9 +1,9 @@
 const disemvowling = (input) => {
   let result = [],
     vowels = ['a', 'e', 'i', 'o', 'u'],
-    splitString = input.replace(/\s/g, ''),
-    filterdString = splitString.split("")
-
+    removeSpaces = input.replace(/\saeiou/g, ''),
+    filterdString = removeSpaces.split("")
+console.log('removeSpaces', removeSpaces)
     for ( var index = 0; index < filterdString.length; index++ ) {
         if ( !vowels.includes(filterdString[index])) {
           result.push(filterdString[index])
@@ -12,3 +12,5 @@ const disemvowling = (input) => {
 
     return result.join("")
 }
+
+console.log(disemvowling('yasee  n'))
