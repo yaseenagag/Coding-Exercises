@@ -1,0 +1,33 @@
+{
+  "name": "coding-exercises",
+  "version": "1.0.0",
+  "description": "Personal Coding Exercises",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --compilers js:babel-register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaseenagag/Coding-Exercises.git"
+  },
+  "author": "Yaseen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yaseenagag/Coding-Exercises/issues"
+  },
+  "homepage": "https://github.com/yaseenagag/Coding-Exercises#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0"
+  }
+}
