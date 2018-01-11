@@ -1,12 +1,13 @@
-function stringIndices() {
-  let input = document.getElementById('phrase').value,
-    position = document.getElementById('position').value,
-    onlyLetters = input.replace(/[!@#$%^&*,]/g, ""),
-    splitString = onlyLetters.split(" ")
+function stringIndices(input, position) {
+  // let input = document.getElementById('phrase').value,
+  //   position = document.getElementById('position').value,
+     onlyLetters = input.replace(/[!@#$%^&*,]/g, "").split(" ")
 
-    if ( isNaN(position) || position > splitString.length || position < 0 ) {
+    if ( isNaN(position) || position > onlyLetters.length || position < 0 ) {
       return ""
     }
 
-  alert( splitString[ position - 1 ] )
+  return onlyLetters[ position - 1 ]
 }
+
+console.log(stringIndices('yaseen coming home', 3))
