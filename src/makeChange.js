@@ -1,36 +1,32 @@
-// const makeChange = ({price, amountGiven}) => {
-//   let change = { quarters: 0, dimes: 0, nickels: 0, pennies: 0 },
-//       remainder = amountGiven - price,
-//       amountOfQuarters = Math.floor( remainder / 25 ),
-//       amountOfDimes = Math.floor( (remainder%25) / 10 ),
-//       amountOfNickels = Math.floor( (remainder%25) / 5 ),
-//       amountOfPennies = Math.floor( remainder / 1 )
-//
-//       return {
-//         quarters: amountOfQuarters,
-//         dimes: amountOfDimes,
-//         nickels: amountOfNickels,
-//         pennies: amountOfPennies
-//       }
-//
-//
-//
-//
-//   // return  amountOfQuarters
-//
-// }
+const makeChange = ({ price, amountGiven }) => {
+  let change = { quarters: 0, dimes: 0, nickels: 0, pennies: 0 },
+    remainder = amountGiven - price
 
-function makeChange(price, amountGiven) {
-  var remains = price;
-  var change = {};
+  const findChangeAmount = (denomination, amount) => {
+    let numberOfDenomination = Math.floor(remainder / amount)
+    change[denomination] = numberOfDenomination
+    remainder = remainder - (numberOfDenomination * amount)
+  }
 
-  for (var currentValue in amountGiven) {
-    if (remains/amountGiven[currentValue]>1) {
-    change[amountGiven[currentValue]] = Math.floor(remains/amountGiven[currentValue]);
-   remains = remains%amountGiven[currentValue];
+  while (remainder > 0) {
+    switch (true) {
+      case (remainder >= 25):
+        findChangeAmount('quarters', 25)
+        break
+      case (remainder >= 10):
+        findChangeAmount('dimes', 10)
+        break
+      case (remainder >= 5):
+        findChangeAmount('nickels', 5)
+        break
+      case (remainder >= 1):
+        findChangeAmount('pennies', 1)
+        break
+      default:
     }
   }
-return change;
+
+  return change
 }
 
 export default makeChange
